@@ -1,0 +1,123 @@
+<div class="theme-button">
+    <p *ngIf="!theme"><i class="fa-solid fa-moon"></i></p>
+    <p *ngIf="theme" style="color: #232323;"><i class="fa-solid fa-sun"></i></p>
+    <label>
+        <input type="checkbox" (click)="changeTheme()">
+        <span class="check"></span>
+    </label>
+</div>
+
+<div class="nav">
+    <ul>
+        <li><a href="/home#page1" class="selector" id="nav-home" (click)="clicked('nav-home', 'page1')" >Home</a></li>
+        <li><a href="/home#page2" class="selector" id="nav-about" (click)="clicked('nav-about', 'page2')" >About me</a></li>
+        <li><a href="/home#page3" class="selector" id="nav-technologies" (click)="clicked('nav-technologies', 'page3')" >Technologies</a></li>
+        <li><a href="/home#page4" class="selector" id="nav-projects" (click)="clicked('nav-projects', 'page4')" >Projects</a></li>
+        <li><a href="/home#page5" class="selector" id="nav-contact" (click)="clicked('nav-contact', 'page5')" >Contact</a></li>
+       
+    </ul>
+</div>
+
+<div class="page1 content" id="page1">
+
+    <div class="photo-content">
+        <img class="photo" src="../../assets/img/photo.jpg" alt="photo">
+    </div>
+    <div class="photo-text-content">
+        <h1 data-text="Hola! Soy Nelson Fonseca&nbsp;">Hola! Soy Nelson Fonseca&nbsp;</h1>
+        <br><br>
+        <h3>- Desarrollador FullStack -</h3>
+    </div>
+
+</div>
+
+<div class="page2 content" id="page2">
+    
+    <div class="page2-photo-content">
+        <img class="page2-photo" src="../../assets/img/photo.jpg" alt="photo">
+        <br>
+        <h5>DESARROLLADOR FULLSTACK</h5>
+    </div>
+
+    <div class="page2-content">
+        <h3>Acerca de mí</h3>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate eligendi sunt molestiae iure. Explicabo perspiciatis aspernatur, at temporibus eveniet dolor. Quisquam, hic quibusdam molestiae sed unde asperiores dolores! Numquam, ea?</p>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui itaque adipisci architecto repudiandae earum. Magnam quo impedit voluptates nemo dolor quaerat aliquam commodi magni! Harum rem atque dolorem aperiam aliquid!</p>
+        <br>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis, odio suscipit iste architecto odit quis dicta excepturi adipisci voluptatibus, saepe inventore, molestiae illo? Possimus beatae nostrum ipsa voluptates aliquid fugiat.</p>
+    </div>
+
+</div>
+
+<div class="page3 content" id="page3">
+    <div class="card" *ngFor="let cards of list">
+        <div class="content-card">
+            <div class="card-image">
+                <svg>
+                    <use *ngIf="cards.image == 'angular'" xlink:href="#angular" />
+                    <use *ngIf="cards.image == 'spring'" xlink:href="#spring" />
+                </svg>
+            </div>
+            <div class="card-title">
+                <h2>{{cards.title}}</h2>
+            </div>
+
+            <div class="card-paragraph">
+                <p>{{cards.text}}</p>
+            </div>
+        </div>
+
+        <div class="icons-list">
+            <div class="icons-button" *ngFor="let icons of cards.technologies">
+                <p pTooltip="hola"><i class="{{icons.icon}}"></i></p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="page4 content" id="page4">
+    <h2>proyectos</h2>
+</div>
+
+<div class="page5 content" id="page5">
+    <div class="page5-form">
+        <form action="">
+            <div class="input-form">
+                <input type="text" placeholder="Su nombre">
+            </div>
+            <div class="input-form">
+                <input type="email" placeholder="Su correo">
+            </div>
+            <div class="input-form">
+                <textarea name="" id="" cols="30" rows="10" placeholder="Mensaje"></textarea>
+            </div>
+            <button>Enviar</button>
+        </form>
+    </div>
+</div>
+
+<svg display="none">
+    <symbol viewBox="0 0 24 24" id="angular">
+        <path
+            d="M9.931 12.645h4.138l-2.07-4.908m0-7.737L.68 3.982l1.726 14.771L12 24l9.596-5.242L23.32 3.984 11.999.001zm7.064 18.31h-2.638l-1.422-3.503H8.996l-1.422 3.504h-2.64L12 2.65z" />
+    </symbol>
+    <symbol viewBox="0 0 237 237" id="spring">
+        <g transform="translate(0.000000,237.000000) scale(0.100000,-0.100000)"
+ stroke="none">
+<path d="M625 2211 c-33 -16 -72 -41 -86 -57 -40 -44 -509 -862 -526 -916 -11
+-38 -11 -57 -2 -95 13 -52 483 -878 528 -927 14 -16 53 -41 86 -57 l60 -29
+501 0 501 0 59 30 c33 16 71 42 86 57 42 46 509 863 524 918 10 38 11 59 2 95
+-12 50 -483 877 -527 924 -14 16 -53 41 -86 57 l-60 29 -500 0 -500 0 -60 -29z
+m589 -315 c66 -28 66 -25 66 -383 l0 -323 -29 -32 c-24 -27 -36 -33 -71 -33
+-35 0 -47 6 -71 33 l-29 32 0 323 c0 356 0 355 64 383 38 16 31 16 70 0z m352
+-132 c57 -27 161 -148 204 -238 188 -390 -23 -845 -435 -942 -98 -23 -276 -15
+-365 15 -345 118 -527 485 -415 839 31 100 103 211 180 280 52 46 64 52 103
+52 57 0 78 -12 92 -54 16 -51 5 -76 -66 -146 -116 -115 -160 -222 -152 -372
+21 -354 420 -559 719 -368 72 47 136 122 176 207 31 64 37 90 41 160 8 150
+-43 271 -161 383 -31 29 -58 64 -62 77 -10 43 4 83 38 104 39 23 59 24 103 3z"/>
+</g>
+    </symbol>
+</svg>

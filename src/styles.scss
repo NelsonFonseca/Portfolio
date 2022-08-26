@@ -1,0 +1,31 @@
+:root{
+    --background-color: #BFD7EA;
+    --font-color: #232323;
+    --complement-color: red;
+    --black-color: #232323;
+    --background-image: url("./assets/img/descarga2.png");
+}
+
+.darkmode{
+    --background-color: #232323;
+    --font-color: #EFEFEF;
+    --complement-color: red;
+    --black-color: #CCEAF4;
+    --background-image: url("./assets/img/descarga.png");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: var(--background-color);
+    color: var(--font-color);
+    overflow-y: hidden;
+    transition: 0.3s;
+    //background-image: url("./assets/img/hexagono.png");
+    background-image: var(--background-image);
+    background-repeat: repeat;
+    z-index: 1;
+}
